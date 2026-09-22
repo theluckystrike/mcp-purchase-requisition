@@ -1,0 +1,22 @@
+{
+  "name": "mcp-purchase-requisition",
+  "version": "0.22.0",
+  "description": "MCP server for purchase requisitions you build once and approve per order, with the signed record of each approval. Purchase requisitions you build once and approve per order, with the signed record of each approval.",
+  "settings": [
+    {
+      "name": "mcp.zovo.one token",
+      "description": "A free anonymous token from https://mcp.zovo.one/mcp/token, or your Pro key. One token is one data space, and it is refreshed for another 30 days on every write.",
+      "envVar": "ZOVO_MCP_TOKEN",
+      "sensitive": true
+    }
+  ],
+  "mcpServers": {
+    "purchase-requisition": {
+      "httpUrl": "https://mcp.zovo.one/mcp/purchase-requisition",
+      "headers": {
+        "Authorization": "Bearer ${ZOVO_MCP_TOKEN}"
+      },
+      "description": "Purchase requisitions you build once and approve per order, with the signed record of each approval."
+    }
+  }
+}
